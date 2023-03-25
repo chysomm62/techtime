@@ -1,0 +1,69 @@
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 60%;
+  width: 65px;
+  height: 20px;
+  background-image: url("/patterns/zigzag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.hero::after {
+  content: "";
+  left: 45%;
+  position: absolute;
+  bottom: 15%;
+  width: 110px;
+  height: 220px;
+  background-image: url("/patterns/hero_arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.hero_text {
+  z-index: 2;
+  position: relative;
+}
+
+.hero_text::before {
+  content: "";
+  left: 5%;
+  position: absolute;
+  top: 10%;
+  width: 16px;
+  height: 16px;
+  background-image: url("/patterns/hero_circle1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.hero_text::after {
+  content: "";
+  right: 5%;
+  position: absolute;
+  top: 15%;
+  width: 9px;
+  height: 9px;
+  background-image: url("/patterns/hero_circle2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media (max-width: 500px) {
+  .hero::before,
+  .hero::after,
+  .hero_text::before,
+  .hero_text::after {
+    display: none;
+  }
+}
