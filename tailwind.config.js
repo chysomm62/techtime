@@ -41,6 +41,7 @@ module.exports = {
           2: "rgba(161, 161, 161, 1)", //black sub texts
           3: "rgba(42, 42, 43, 1)", //social icons
           4: "rgba(170, 196, 230, 1)", //nav links
+          5: "rgba(66, 65, 65, 1)", //placeholder
         },
       },
       boxShadow: {
