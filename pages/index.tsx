@@ -1,5 +1,6 @@
 import Head from "next/head";
 import {
+  CommunityComponent,
   FaqsComponent,
   FooterComponent,
   HeroComponent,
@@ -16,6 +17,7 @@ export default function Techtime() {
       </Head>
       <main>
         <HeroComponent />
+        <CommunityComponent />
         <FaqsComponent /> <FooterComponent />
       </main>
     </>

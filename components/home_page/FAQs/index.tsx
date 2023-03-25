@@ -55,7 +55,7 @@ const Faqs: FC = () => {
         </h2>
         <p className="max-w-screen-md mx-auto py-1 md:py-5 block text-gray-2 font-medium text-[8px] leading-relaxed md:text-base text-center capitalize px-8">
           high-defination video is video of higher resolution and quality than
-          standard definition. while there’s no standard meaning for high
+          standard definition. while there&#39;s no standard meaning for high
           definition, generally any standard video image
         </p>
       </header>

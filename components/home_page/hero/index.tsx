@@ -1,7 +1,6 @@
 import Button from "@/components/common/Button";
 import HeroImage from "@/public/images/hero/hero.png";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -19,7 +18,7 @@ const users = [
 const Hero = () => {
   const router = useRouter();
   const applyHandler = () => {
-    router.push("/auth/register");
+    router.push("/");
   };
 
   return (
