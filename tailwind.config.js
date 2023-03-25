@@ -42,6 +42,7 @@ module.exports = {
           3: "rgba(42, 42, 43, 1)", //social icons
           4: "rgba(170, 196, 230, 1)", //nav links
           5: "rgba(66, 65, 65, 1)", //placeholder
+          6: "rgba(217, 217, 217, 1)", //add/minus
         },
       },
       boxShadow: {

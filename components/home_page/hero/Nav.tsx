@@ -9,15 +9,15 @@ import Button from "@/components/common/Button";
 const Nav = () => {
   const links = [
     { href: "/", label: "Home", active: true },
-    { href: "/about us", label: "About Us", active: false },
-    { href: "/courses", label: "Courses", active: false },
-    { href: "/testimonial", label: "Testimonial", active: false },
-    { href: "/community", label: "Community", active: false },
+    { href: "/", label: "About Us", active: false },
+    { href: "/", label: "Courses", active: false },
+    { href: "/", label: "Testimonial", active: false },
+    { href: "/", label: "Community", active: false },
   ];
 
   const router = useRouter();
   const applyHandler = () => {
-    router.push("/auth/register");
+    router.push("/");
   };
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -33,11 +33,11 @@ const Nav = () => {
       <div
         className={
           isOpen
-            ? " fixed top-0 left-0 right-0 bottom-0 w-full h-screen flex items-center justify-center flex-col lg:static lg:h-auto lg:flex-row lg:justify-between z-10"
+            ? " fixed top-0 left-0 right-0 bottom-0 w-full h-screen flex items-center justify-center flex-col lg:static lg:h-auto lg:flex-row lg:justify-between z-10 bg-blue-1"
             : "translate-y-screen lg:translate-y-0  fixed top-0 left-0 right-0 bottom-0 w-full h-screen flex items-center justify-center flex-col lg:static lg:h-auto lg:flex-row lg:justify-between"
         }
       >
-        <ul className="flex flex-col space-y-5 mb-16 lg:space-y-0 lg:flex-row lg:mb-0  lg:ml-10 lg:justify-end lg:items-center gap-6 lg:flex-1">
+        <ul className="flex flex-col space-y-5 mb-16 lg:space-y-0 lg:flex-row lg:mb-0  lg:ml-10 lg:justify-end lg:items-center gap-6 lg:flex-1 text-center">
           {links.map((link, index) => (
             <li key={index}>
               <Link

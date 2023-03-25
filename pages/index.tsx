@@ -1,5 +1,9 @@
 import Head from "next/head";
-import { FooterComponent, HeroComponent } from "@/components/home_page";
+import {
+  FaqsComponent,
+  FooterComponent,
+  HeroComponent,
+} from "@/components/home_page";
 
 export default function Techtime() {
   return (
@@ -12,7 +16,7 @@ export default function Techtime() {
       </Head>
       <main>
         <HeroComponent />
-        <FooterComponent />
+        <FaqsComponent /> <FooterComponent />
       </main>
     </>
   );
