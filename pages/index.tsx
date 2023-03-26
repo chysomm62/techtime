@@ -6,6 +6,7 @@ import {
   FooterComponent,
   HeroComponent,
   SpecsComponent,
+  StandOutComponent,
 } from "@/components/home_page";
 
 export default function Techtime() {
@@ -21,6 +22,7 @@ export default function Techtime() {
         <HeroComponent />
         <CompaniesComponent />
         <SpecsComponent />
+        <StandOutComponent />
         <CommunityComponent />
         <FaqsComponent />
         <FooterComponent />

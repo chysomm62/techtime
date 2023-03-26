@@ -1,0 +1,36 @@
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  right: 1rem;
+  position: absolute;
+  bottom: 5%;
+  width: 75px;
+  height: 20px;
+  background-image: url("/patterns/hero_circle1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.section::after {
+  content: "";
+  left: 2rem;
+  position: absolute;
+  bottom: 20%;
+  width: 75px;
+  height: 20px;
+  background-image: url("/patterns/triangle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media (max-width: 500px) {
+  .section::before,
+  .section::after {
+    display: none;
+  }
+}

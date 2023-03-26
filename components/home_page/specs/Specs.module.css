@@ -10,7 +10,7 @@
   content: "";
   right: -5%;
   position: absolute;
-  bottom: 15%;
+  bottom: 18%;
   width: 200px;
   height: 235px;
   background-image: url("/patterns/spec_dots.svg");
@@ -49,6 +49,19 @@
   background-position: left center;
 }
 
+.section::after {
+  content: "";
+  right: 25%;
+  position: absolute;
+  bottom: 0;
+  width: 75px;
+  height: 20px;
+  background-image: url("/patterns/yellow_zigzag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 .spec_header {
   position: relative;
 }
@@ -69,6 +82,7 @@
 @media (max-width: 500px) {
   .spec_header::before,
   .section::before,
+  .section::after,
   .images::before {
     display: none;
   }
