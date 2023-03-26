@@ -1,0 +1,22 @@
+.section {
+  position: relative;
+}
+
+.section::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 30%;
+  width: 75px;
+  height: 18px;
+  background-image: url("/patterns/yellow_zigzag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media (max-width: 500px) {
+  .section::after {
+    display: none;
+  }
+}

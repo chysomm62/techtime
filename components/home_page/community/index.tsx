@@ -16,7 +16,9 @@ const Community: FC = () => {
     <section className="bg-blue-1 text-white">
       <div className="max-w-screen-lg mx-auto font-satoshi py-5 md:py-12 relative before:content=[''] before:w-5 before:h-5 before:absolute before:right-0 before:top-5 md:before:top-14 before:rounded-full before:border-4 before:border-blue-1">
         <header className="px-3">
-          <h5 className="uppercase text-center">join our community</h5>
+          <h5 className="uppercase text-[8px] md:text-base text-center">
+            join our community
+          </h5>
           <h2 className="leading-none font-clash_display text-2xl md:text-[54px] text-center ">
             Are you ready to connect with the future talent of the tech world{" "}
           </h2>

@@ -43,13 +43,11 @@ module.exports = {
           4: "rgba(170, 196, 230, 1)", //nav links
           5: "rgba(66, 65, 65, 1)", //placeholder
           6: "rgba(217, 217, 217, 1)", //add/minus
+          7: "rgba(248, 249, 252, 1)", //white background
         },
       },
       boxShadow: {
         default: "0px 64px 64px -48px rgba(15, 15, 15, 0.1)",
-        1: "0px 0px 20px 5px rgba(0, 19, 119, 0.05)",
-        2: "0px 30px 40px rgba(7, 109, 243, 0.05)",
-        3: "2px 2px 3px rgba(144, 126, 126, 0.11)",
       },
     },
   },

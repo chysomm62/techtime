@@ -1,0 +1,75 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  position: relative;
+  z-index: 2;
+}
+
+.images::before {
+  content: "";
+  right: -5%;
+  position: absolute;
+  bottom: 15%;
+  width: 200px;
+  height: 235px;
+  background-image: url("/patterns/spec_dots.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  z-index: 1;
+}
+
+.girl_image {
+  grid-row: 8/-1;
+  grid-column: 1/5;
+  z-index: 2;
+}
+
+.boy_image {
+  grid-row: 1/7;
+  grid-column: 3/-1;
+  z-index: 2;
+}
+
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  right: -40px;
+  position: absolute;
+  top: 2rem;
+  width: 100px;
+  height: 15px;
+  background-image: url("/patterns/blue_zigzag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.spec_header {
+  position: relative;
+}
+
+.spec_header::before {
+  content: "";
+  left: -2.75rem;
+  position: absolute;
+  top: -2rem;
+  width: 65px;
+  height: 65px;
+  background-image: url("/patterns/crown.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media (max-width: 500px) {
+  .spec_header::before,
+  .section::before,
+  .images::before {
+    display: none;
+  }
+}

@@ -1,9 +1,11 @@
 import Head from "next/head";
 import {
   CommunityComponent,
+  CompaniesComponent,
   FaqsComponent,
   FooterComponent,
   HeroComponent,
+  SpecsComponent,
 } from "@/components/home_page";
 
 export default function Techtime() {
@@ -17,8 +19,11 @@ export default function Techtime() {
       </Head>
       <main>
         <HeroComponent />
+        <CompaniesComponent />
+        <SpecsComponent />
         <CommunityComponent />
-        <FaqsComponent /> <FooterComponent />
+        <FaqsComponent />
+        <FooterComponent />
       </main>
     </>
   );
