@@ -11,10 +11,10 @@ const imageLinks = [
 
 const Companies: FC = () => {
   return (
-    <section className="bg-blue-2 text-white py-5 md:py-16">
+    <section className="bg-blue-2 text-white py-5 lg:py-16">
       <div className="max-w-screen-lg mx-auto flex items-center justify-evenly">
         {imageLinks.map((image) => (
-          <div className="relative w-14 h-4 md:w-48 md:h-10 ">
+          <div className="relative w-14 h-4 lg:w-48 lg:h-10 ">
             <Image
               src={image}
               alt="company logo "

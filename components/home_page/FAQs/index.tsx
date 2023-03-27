@@ -51,9 +51,9 @@ const Faqs: FC = () => {
   };
   return (
     <section className={`${styles.section}`}>
-      <div className="max-w-screen-lg mx-auto font-satoshi py-5 md:py-12 relative before:content=[''] before:w-5 before:h-5 before:absolute before:right-0 before:top-5 md:before:top-14 before:rounded-full before:border-4 before:border-blue-1 ">
+      <div className="max-w-screen-lg mx-auto font-satoshi py-5 md:py-12 relative before:content=[''] before:w-2 md:before:w-5 before:h-2 md:before:h-5 before:absolute before:right-0 before:top-5 md:before:top-14 before:rounded-full before:border-4 before:border-blue-1 ">
         <header className="px-4">
-          <h2 className="font-clash_display text-2xl md:text-[54px] text-blue-3 text-center ">
+          <h2 className="font-clash_display text-2xl md:text-[54px] text-blue-3 text-center font-bold">
             Frequently Asked Questions
           </h2>
           <p className="max-w-screen-md mx-auto py-1 md:py-5 block text-gray-2 font-medium text-[8px] leading-relaxed md:text-base text-center capitalize px-8">
