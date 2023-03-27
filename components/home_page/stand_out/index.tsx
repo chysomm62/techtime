@@ -1,5 +1,5 @@
+import { FC } from "react";
 import BoyImage from "@/public/images/stand_out_boy.png";
-import GirlImage from "@/public/images/spec_girl.png";
 import Image from "next/image";
 
 import styles from "./StandOut.module.css";
@@ -27,9 +27,14 @@ const data = [
   },
 ];
 
-const StandOut = () => {
+interface standOutProp {
+  aboutRef: any;
+}
+
+const StandOut: FC<standOutProp> = ({ aboutRef }) => {
   return (
     <section
+      ref={aboutRef}
       className={`font-satoshi px-5 bg-gray-7 max-w-full overflow-x-hidden ${styles.section}`}
     >
       <div className="max-w-screen-xl mx-auto lg:justify-between lg:items-center lg:flex py-5 lg:py-12 gap-0 lg:gap-10">

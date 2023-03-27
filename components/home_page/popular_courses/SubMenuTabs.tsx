@@ -18,11 +18,7 @@ const SubMenuTabs: FC<SubMenuTabsProps> = ({
         <div key={`tab-${index}`}>
           <Button
             action={() => setCurrentTab(tabs.indexOf(tab))}
-            className={
-              tab === currentTab
-                ? "text-blue-1 phone:text-[8px]"
-                : "text-gray-2 phone:text-[8px]"
-            }
+            className={tab === currentTab ? "text-blue-1 " : "text-gray-2 "}
           >
             {tab}
           </Button>

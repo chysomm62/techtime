@@ -81,27 +81,38 @@ const courses = [
   },
 ];
 
-const PopularCourses: FC = () => {
+interface coursesProp {
+  coursesRef: any;
+}
+
+const PopularCourses: FC<coursesProp> = ({ coursesRef }) => {
   const [currentTab, setCurrentTab] = useState<CoursesTabEnum>(
     CoursesTabEnum.ALLCATEGORIES
   );
+
+  const filterArray = (cat: string) => {
+    return courses.filter(
+      (el) => el.category.toLowerCase() === cat.toLowerCase()
+    );
+  };
 
   const getTabs = () => {
     switch (currentTab) {
       case CoursesTabEnum.ALLCATEGORIES:
         return <Courses courses={courses} />;
       case CoursesTabEnum.DESIGN:
-        return <Courses courses={courses} />;
+        return <Courses courses={filterArray("design")} />;
       case CoursesTabEnum.DEVELOPMENT:
-        return <Courses courses={courses} />;
+        return <Courses courses={filterArray("development")} />;
       case CoursesTabEnum.MARKETING:
-        return <Courses courses={courses} />;
+        return <Courses courses={filterArray("marketing")} />;
       default:
         break;
     }
   };
   return (
     <section
+      ref={coursesRef}
       className={`${styles.section} max-w-screen-xl mx-auto font-satoshi py-5 md:py-12 relative `}
     >
       <header className={`${styles.header} px-4`}>

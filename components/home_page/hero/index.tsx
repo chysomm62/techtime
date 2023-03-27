@@ -1,3 +1,4 @@
+import { FC } from "react";
 import Button from "@/components/common/Button";
 import HeroImage from "@/public/images/hero/hero.png";
 import Image from "next/image";
@@ -15,7 +16,19 @@ const users = [
   "/images/hero/user5.png",
 ];
 
-const Hero = () => {
+interface heroProps {
+  aboutRef: any;
+  coursesRef: any;
+  testimonialRef: any;
+  communityRef: any;
+}
+
+const Hero: FC<heroProps> = ({
+  aboutRef,
+  coursesRef,
+  testimonialRef,
+  communityRef,
+}) => {
   const router = useRouter();
   const applyHandler = () => {
     router.push("/");
@@ -25,7 +38,12 @@ const Hero = () => {
     <header
       className={`font-satoshi px-5 text-gray-1   bg-blue-1 ${styles.hero}`}
     >
-      <Nav />
+      <Nav
+        aboutRef={aboutRef}
+        coursesRef={coursesRef}
+        testimonialRef={testimonialRef}
+        communityRef={communityRef}
+      />
       <div className="max-w-screen-xl mx-auto lg:justify-between lg:items-center lg:flex pt-10 ">
         <div
           className={`mb-10 lg:mb-20 lg:max-w-lg self-stretch grow flex items-center justify-center ${styles.hero_text}`}
