@@ -12,6 +12,7 @@ module.exports = {
       },
       screens: {
         phone: "500px",
+        fold: { min: "200px", max: "300px" }, //style specifically for fold devices
       },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
@@ -44,6 +45,9 @@ module.exports = {
           5: "rgba(66, 65, 65, 1)", //placeholder
           6: "rgba(217, 217, 217, 1)", //add/minus
           7: "rgba(248, 249, 252, 1)", //white background
+        },
+        yellow: {
+          1: "rgba(246, 180, 53, 1)", //star icon
         },
       },
       boxShadow: {

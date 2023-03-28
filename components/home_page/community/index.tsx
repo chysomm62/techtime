@@ -1,21 +1,15 @@
 import { FC, useRef } from "react";
 import MapImage from "@/public/images/people_map.png";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import Button from "@/components/common/Button";
 interface communityProp {
   communityRef: any;
 }
 
+const clickHandler = () => {};
+
 const Community: FC<communityProp> = ({ communityRef }) => {
-  const ref = useRef();
-  const router = useRouter();
-
-  const applyHandler = () => {
-    router.push("/");
-  };
-
   return (
     <section className="bg-blue-1 text-white" ref={communityRef}>
       <div className="max-w-screen-lg mx-auto font-satoshi py-5 md:py-12 relative before:content=[''] before:w-5 before:h-5 before:absolute before:right-0 before:top-5 md:before:top-14 before:rounded-full before:border-4 before:border-blue-1">
@@ -38,7 +32,7 @@ const Community: FC<communityProp> = ({ communityRef }) => {
           />
         </div>
         <Button
-          action={applyHandler}
+          action={clickHandler}
           className="mx-auto bg-white text-blue-1 rounded"
         >
           join our community

@@ -2,25 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/images/techtime.svg";
 import { FaBars } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 import { useState, FC } from "react";
-import { useRouter } from "next/router";
 import Button from "@/components/common/Button";
+import { refTypes } from "@/lib/types/ref.types";
 
-interface navProps {
-  aboutRef: any;
-  coursesRef: any;
-  testimonialRef: any;
-  communityRef: any;
-}
-
-const Nav: FC<navProps> = ({
+const Nav: FC<refTypes> = ({
+  homeRef,
   aboutRef,
   coursesRef,
   testimonialRef,
   communityRef,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const links = [
-    { href: "/", label: "Home", active: true, reff: null },
+    { href: "/", label: "Home", active: true, reff: homeRef },
     { href: "/", label: "About Us", active: false, reff: aboutRef },
     { href: "/", label: "Courses", active: false, reff: coursesRef },
     {
@@ -31,7 +27,7 @@ const Nav: FC<navProps> = ({
     },
     { href: "/", label: "Community", active: false, reff: communityRef },
   ];
-  const [isOpen, setIsOpen] = useState(false);
+
   const handleScroll = (ref: any) => {
     window.scrollTo({
       top: ref?.offsetTop,
@@ -45,9 +41,8 @@ const Nav: FC<navProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const router = useRouter();
   const applyHandler = () => {
-    router.push("/");
+    setIsOpen(!isOpen);
   };
 
   const toggleMenu = () => {
@@ -91,7 +86,11 @@ const Nav: FC<navProps> = ({
       </div>
 
       <button className="relative z-10 lg:hidden" onClick={toggleMenu}>
-        <FaBars color="#FFFFFF" fontSize="25px" />
+        {isOpen ? (
+          <MdClose color="#FFFFFF" fontSize="25px" />
+        ) : (
+          <FaBars color="#FFFFFF" fontSize="25px" />
+        )}{" "}
       </button>
     </nav>
   );

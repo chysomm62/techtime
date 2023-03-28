@@ -59,6 +59,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: rgba(248, 249, 252, 1);
 }

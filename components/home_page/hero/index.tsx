@@ -2,11 +2,11 @@ import { FC } from "react";
 import Button from "@/components/common/Button";
 import HeroImage from "@/public/images/hero/hero.png";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import styles from "./Hero.module.css";
 import Nav from "./Nav";
+import { refTypes } from "@/lib/types/ref.types";
 
 const users = [
   "/images/hero/user1.png",
@@ -16,29 +16,21 @@ const users = [
   "/images/hero/user5.png",
 ];
 
-interface heroProps {
-  aboutRef: any;
-  coursesRef: any;
-  testimonialRef: any;
-  communityRef: any;
-}
-
-const Hero: FC<heroProps> = ({
+const Hero: FC<refTypes> = ({
+  homeRef,
   aboutRef,
   coursesRef,
   testimonialRef,
   communityRef,
 }) => {
-  const router = useRouter();
-  const applyHandler = () => {
-    router.push("/");
-  };
-
+  const clickHandler = () => {};
   return (
     <header
+      ref={homeRef}
       className={`font-satoshi px-5 text-gray-1   bg-blue-1 ${styles.hero}`}
     >
       <Nav
+        homeRef={homeRef}
         aboutRef={aboutRef}
         coursesRef={coursesRef}
         testimonialRef={testimonialRef}
@@ -58,22 +50,30 @@ const Hero: FC<heroProps> = ({
             </p>
             <div className="flex items-center gap-2 justify-center lg:justify-start my-4">
               <Button
-                action={applyHandler}
+                action={clickHandler}
                 className="text-white text-left  font-medium rounded border"
               >
                 get started now <FiArrowUpRight />
               </Button>
               <Button
-                action={applyHandler}
+                action={clickHandler}
                 className="bg-white text-blue-1 rounded"
               >
                 enroll now
               </Button>
             </div>
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-              {users.map((user) => (
-                <div className="relative ml-[-18px] first:ml-0 w-8 h-8 md:ml-[-36px] md:w-16 md:h-16 ">
-                  <Image src={user} alt="image of user " fill />
+              {users.map((user, index: number) => (
+                <div
+                  className="relative ml-[-18px] first:ml-0 w-8 h-8 md:ml-[-36px] md:w-16 md:h-16"
+                  key={`${user} -${index}`}
+                >
+                  <Image
+                    src={user}
+                    alt="image of user "
+                    fill
+                    sizes="(max-width: 800px ) 32px, 64px"
+                  />
                 </div>
               ))}
               <div>
@@ -87,7 +87,9 @@ const Hero: FC<heroProps> = ({
             </div>
           </div>
         </div>
-        <div className={`${styles.hero_image}  lg:max-w-[50%] grow`}>
+        <div
+          className={`${styles.hero_image} mx-auto lg:mx-0 lg:max-w-[50%] grow`}
+        >
           <Image
             priority={true}
             src={HeroImage}

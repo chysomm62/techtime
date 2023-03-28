@@ -1,24 +1,13 @@
 import Button from "@/components/common/Button";
+import { courses } from "@/lib/variables/specsCourses";
 import BoyImage from "@/public/images/spec_boy.png";
 import GirlImage from "@/public/images/spec_girl.png";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import styles from "./Specs.module.css";
 
-const courses = [
-  { label: "audio classes", icon: "/icons/courses/icon1.svg" },
-  { label: "live classes", icon: "/icons/courses/icon2.svg" },
-  { label: "recorded classes", icon: "/icons/courses/icon3.svg" },
-  { label: "50+ notes", icon: "/icons/courses/icon4.svg" },
-];
-
 const Specs = () => {
-  const router = useRouter();
-  const applyHandler = () => {
-    router.push("/");
-  };
-
+  const clickHandler = () => {};
   return (
     <section
       className={`font-satoshi px-5 bg-gray-7 max-w-full overflow-x-hidden ${styles.section}`}
@@ -39,19 +28,23 @@ const Specs = () => {
               for high definition, generally any standard video image..
             </p>
             <Button
-              action={applyHandler}
+              action={clickHandler}
               className="mx-auto lg:mx-0 text-white text-left bg-blue-1 font-medium rounded border"
             >
               view courses
             </Button>
             <div className="grid grid-cols-2 gap-6 py-3 md:py-5 justify-items-start  max-w-fit">
-              {courses.map((course) => (
-                <div className="flex items-center gap-2 lg:gap-4 py-2 lg:py-5 px-4 lg:px-6 w-52 last:ml-3 lg:last:ml-5">
+              {courses.map((course, index) => (
+                <div
+                  className="flex items-center gap-2 lg:gap-4 py-2 lg:py-5 px-4 lg:px-6 w-52 last:ml-3 lg:last:ml-5"
+                  key={`${course.label} - ${index}`}
+                >
                   <div className="flex items-center justify-center relative w-4 md:w-8 h-4 md:h-8">
                     <Image
                       src={course.icon}
                       alt={`${course.label} icon`}
                       fill
+                      sizes="(max-width: 800px ) 16px, 32px"
                     />
                   </div>
                   <h6 className="whitespace-nowrap capitalize text-blue-3 font-xs md:font-base font-bold">

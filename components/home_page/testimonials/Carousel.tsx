@@ -25,18 +25,19 @@ const Carousel: FC<completeProps> = ({ testimonials }) => {
     <>
       <Swiper
         slidesPerView={"auto"}
-        spaceBetween={18}
+        spaceBetween={14}
         scrollbar={{ hide: true }}
         pagination={{ clickable: true }}
         modules={[Pagination]}
         className="mySwiper"
       >
         {testimonials.map((testimonial: any, index: number) => (
-          <SwiperSlide style={{ flexShrink: 0 }} className={styles.swipeSlide}>
-            <div
-              key={`${testimonial.userName} - ${index}`}
-              className="px-4 lg:px-6 py-6 md:py-8 bg-white rounded-2xl lg:rounded-3xl flex-shrink-0"
-            >
+          <SwiperSlide
+            key={`${testimonial.userName} - ${index}`}
+            style={{ flexShrink: 0 }}
+            className={styles.swipeSlide}
+          >
+            <div className="px-4 lg:px-6 py-6 md:py-8 bg-white rounded-2xl lg:rounded-3xl flex-shrink-0">
               <p className="text-[8px] md:text-sm text-gray-2 capitalize py-3">
                 {testimonial.text}
               </p>
@@ -46,6 +47,7 @@ const Carousel: FC<completeProps> = ({ testimonials }) => {
                     src={testimonial.image}
                     alt={testimonial.userName}
                     fill
+                    sizes="(max-width: 800px ) 16px, 48px"
                   />
                 </div>
                 <div>

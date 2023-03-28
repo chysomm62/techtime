@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
+import { FaStar, FaRegClock } from "react-icons/fa";
+import { MdOutlineMenuBook } from "react-icons/md";
 
 interface CoursesProps {
   [x: string]: any;
@@ -21,14 +23,19 @@ interface course {
 
 const Courses: FC<CoursesProps> = ({ courses }) => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3">
+    <div className="grid fold:grid-cols-1 grid-cols-2 lg:grid-cols-3">
       {courses?.map((course: any, index: number) => (
         <div
           key={`${course.header} - ${index}`}
           className="rounded md:rounded-2xl bg-white py-4 px-2 md:px-5"
         >
-          <div className="relative w-full h-auto min-w-[150px] md:min-w-[300px] min-h-[110px] md:min-h-[250px]">
-            <Image src={course.image} alt={course.header} fill />
+          <div className="relative w-full h-auto min-w-[150px] md:min-w-[300px] min-h-[110px] md:min-h-[250px] fold:min-h-[130px]">
+            <Image
+              src={course.image}
+              alt={course.header}
+              fill
+              sizes="(max-width: 800px ) 100vw, 50vw"
+            />
           </div>
           <div className="flex items-center justify-between my-2 md:my-4">
             <div className="bg-[#1E5DCE33] rounded md:rounded-2xl px-2 md:px-5  md:py-1 py-[2px]">
@@ -37,7 +44,10 @@ const Courses: FC<CoursesProps> = ({ courses }) => {
               </p>
             </div>
             <div className="flex items-center gap-1 md:gap-2 text-gray-2">
-              <p className="text-[4px] md:text-xs font-bold">{course.star}</p>
+              <div className="flex items-center justify-start gap-0">
+                <p className="text-[4px] md:text-xs font-bold">{course.star}</p>
+                <FaStar className="text-yellow-1 text-[4px] md:text-xs" />
+              </div>
               <p className="text-[4px] md:text-xs font-bold">
                 {course.downloads}
               </p>
@@ -48,20 +58,31 @@ const Courses: FC<CoursesProps> = ({ courses }) => {
           </h4>
           <div className="flex items-center justify-between mt-1 md:mt-2 mb-2 md:mb-4">
             <div className="bg-[rgba(30, 93, 206, 0.2)] ">
-              <p className="text-gray-2 text-[4px] md:text-base font-medium">
-                {course.time}
-              </p>
+              <div className="flex items-center justify-start gap-1 md:gap-2">
+                <FaRegClock className=" text-gray-2 text-[7px] md:text-xl" />
+                <p className="text-gray-2 text-[4px] md:text-base font-medium">
+                  {course.time}
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-1 md:gap-2">
-              <p className="text-gray-2 text-[4px] md:text-base font-medium capitalize">
-                {course.lessons}
-              </p>
+              <div className="flex items-center justify-start gap-1 md:gap-2">
+                <MdOutlineMenuBook className=" text-gray-2 text-[7px] md:text-xl" />
+                <p className="text-gray-2 text-[4px] md:text-base font-medium capitalize">
+                  {course.lessons}
+                </p>
+              </div>
             </div>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1 md:gap-2">
               <div className="relative w-4 md:w-10 h-4 md:h-10">
-                <Image src={course.userImg} alt={course.userName} fill />
+                <Image
+                  src={course.userImg}
+                  alt={course.userName}
+                  fill
+                  sizes="(max-width: 800px ) 16px, 40px"
+                />
               </div>
               <h5 className="text-black font-bold text-[6px] md:text-base capitalize">
                 {course.userName}

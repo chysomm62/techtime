@@ -3,29 +3,7 @@ import BoyImage from "@/public/images/stand_out_boy.png";
 import Image from "next/image";
 
 import styles from "./StandOut.module.css";
-
-const data = [
-  {
-    label: "experienced mentors",
-    text: "high-defination video is video of higher resolution and quality than standard definition. high-defination video is video of higher resolution and quality than standard definition. ",
-    icon: "/icons/stand_outs/icon1.svg",
-  },
-  {
-    label: "one-on-one meetings",
-    text: "high-defination video is video of higher resolution and quality than standard definition. high-defination video is video of higher resolution and quality than standard definition. ",
-    icon: "/icons/stand_outs/icon2.svg",
-  },
-  {
-    label: "one-on-one meetings",
-    text: "high-defination video is video of higher resolution and quality than standard definition. high-defination video is video of higher resolution and quality than standard definition. ",
-    icon: "/icons/stand_outs/icon3.svg",
-  },
-  {
-    label: "affordable prices",
-    text: "high-defination video is video of higher resolution and quality than standard definition. high-defination video is video of higher resolution and quality than standard definition. ",
-    icon: "/icons/stand_outs/icon4.svg",
-  },
-];
+import { data } from "@/lib/variables/standOutData";
 
 interface standOutProp {
   aboutRef: any;
@@ -61,11 +39,19 @@ const StandOut: FC<standOutProp> = ({ aboutRef }) => {
             </div>
           </div>
         </div>
-        <div className=" grow lg:max-w-[50%] grid grid-cols-2 gap-2 lg:gap-6 py-5 justify-items-start">
-          {data.map((course) => (
-            <div className=" gap-4 py-2 md:py-5 px-3 md:px-6 bg-white rounded md:rounded-lg">
+        <div className=" grow lg:max-w-[50%] grid fold:grid-cols-1 grid-cols-2 gap-2 lg:gap-6 py-5 justify-items-start">
+          {data.map((course, index) => (
+            <div
+              className=" gap-4 py-2 md:py-5 px-3 md:px-6 bg-white rounded md:rounded-lg"
+              key={`${course.label} - ${index}`}
+            >
               <div className="flex items-center justify-center relative w-8 md:w-12 h-8 md:h-12 mb-3 md:mb-6">
-                <Image src={course.icon} alt={`${course.label} icon`} fill />
+                <Image
+                  src={course.icon}
+                  alt={`${course.label} icon`}
+                  fill
+                  sizes="(max-width: 800px ) 32px, 48px"
+                />
               </div>
               <h6 className="whitespace-nowrap capitalize text-blue-3 font-xs md:font-base font-bold">
                 {course.label}

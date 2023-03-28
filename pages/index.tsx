@@ -11,9 +11,9 @@ import {
   StandOutComponent,
   TestimonialComponent,
 } from "@/components/home_page";
-import { JsxElement } from "typescript";
 
 export default function Techtime() {
+  const homeRef = useRef() as any;
   const aboutRef = useRef() as any;
   const coursesRef = useRef() as any;
   const testimonialRef = useRef() as any;
@@ -29,6 +29,7 @@ export default function Techtime() {
       </Head>
       <main>
         <HeroComponent
+          homeRef={homeRef}
           aboutRef={aboutRef}
           coursesRef={coursesRef}
           testimonialRef={testimonialRef}
@@ -41,7 +42,13 @@ export default function Techtime() {
         <TestimonialComponent testimonialRef={testimonialRef} />
         <CommunityComponent communityRef={communityRef} />
         <FaqsComponent />
-        <FooterComponent />
+        <FooterComponent
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          coursesRef={coursesRef}
+          testimonialRef={testimonialRef}
+          communityRef={communityRef}
+        />
       </main>
     </>
   );
