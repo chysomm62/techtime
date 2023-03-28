@@ -9,6 +9,7 @@ import {
   PopularCoursesComponent,
   SpecsComponent,
   StandOutComponent,
+  TestimonialComponent,
 } from "@/components/home_page";
 import { JsxElement } from "typescript";
 
@@ -37,6 +38,7 @@ export default function Techtime() {
         <SpecsComponent />
         <StandOutComponent aboutRef={aboutRef} />
         <PopularCoursesComponent coursesRef={coursesRef} />
+        <TestimonialComponent testimonialRef={testimonialRef} />
         <CommunityComponent communityRef={communityRef} />
         <FaqsComponent />
         <FooterComponent />

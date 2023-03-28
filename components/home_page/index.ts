@@ -6,3 +6,4 @@ export { default as CompaniesComponent } from "./companies";
 export { default as SpecsComponent } from "./specs";
 export { default as StandOutComponent } from "./stand_out";
 export { default as PopularCoursesComponent } from "./popular_courses";
+export { default as TestimonialComponent } from "./testimonials";

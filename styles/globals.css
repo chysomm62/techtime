@@ -59,6 +59,10 @@
   font-display: swap;
 }
 
+body {
+  background: rgba(248, 249, 252, 1);
+}
+
 button {
   display: flex;
   justify-content: center;

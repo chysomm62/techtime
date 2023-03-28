@@ -74,8 +74,8 @@ const Nav: FC<navProps> = ({
               onClick={() => handleClick(link.reff)}
               className={
                 link.active
-                  ? "font-book text-white hover:text-gray-1 "
-                  : "font-book text-gray-4 hover:text-gray-1"
+                  ? "font-book text-white hover:text-gray-1 cursor-pointer"
+                  : "font-book text-gray-4 hover:text-gray-1 cursor-pointer"
               }
             >
               {link.label}
