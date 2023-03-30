@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: docker-nextjs-dev
+    image: docker-nextjs-techtime-dev
     build: .
     ports:
       - 3000:3000
