@@ -12,7 +12,7 @@ const Testimonials: FC<TestimonialProp> = ({ testimonialRef }) => {
   return (
     <section
       ref={testimonialRef}
-      className={`${styles.section} font-satoshi py-5 md:py-12 relative `}
+      className={`${styles.section} mx-auto max-w-screen-2xl font-satoshi py-5 md:py-12 relative `}
     >
       <header className={`${styles.header} px-4`}>
         <h2 className="font-clash_display text-2xl md:text-[54px] text-blue-3 text-center capitalize font-bold leading-tight">
